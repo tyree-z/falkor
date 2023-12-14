@@ -1,0 +1,42 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    # Determine tag based on branch
+    - name: Set Docker Image Tag
+      id: set_tag
+      run: |
+        if [[ $GITHUB_REF == refs/heads/dev ]]; then
+          echo "::set-output name=tag::dev"
+        else
+          echo "::set-output name=tag::${{ github.run_number }}"
+        fi
+
+    # Build the Docker image
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile --tag falkor:${{ steps.set_tag.outputs.tag }}
+        docker tag falkor:${{ steps.set_tag.outputs.tag }} falkor:latest
+
+    # Login to DockerHub
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    # Push both tags of the image to DockerHub
+    - name: Push the images
+      run: |
+        docker push falkor:${{ steps.set_tag.outputs.tag }}
+        docker push falkor:latest
