@@ -35,7 +35,7 @@ APP_KEY=
 DRIVE_DISK=local
 ```
 
-### Explanation of Variables:
+### Explanation of Variables
 
 1. **PORT**: Defines the port number on which your AdonisJS server will listen. Default is `3333`.
 2. **HOST**: The host address for your server. Typically set to `0.0.0.0` to accept requests from all IPs.
