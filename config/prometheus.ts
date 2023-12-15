@@ -23,8 +23,8 @@ const prometheusConfig: PrometheusConfig = {
   | Collect overall performance metrics of the entire application.
   */
   systemMetrics: {
-    enabled: true,
-    prefix: '',
+    enabled: false,
+    prefix: 'falkor_perf',
   },
 
   /*
