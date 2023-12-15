@@ -12,6 +12,9 @@ env:
   environment: test
   DRIVE_DISK: local
   APP_KEY: 5qLsRbCBzpjpgyJ3xNfd649c77YERiaF # Not an important key ;)
+  CACHE_VIEWS: false
+  SESSION_DRIVER: file
+  APP_NAME: Falkor
 
 jobs:
   build:
@@ -27,6 +30,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci --production
+      - run: npm ci
       - run: npm run build
       - run: npm test
