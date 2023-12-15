@@ -14,7 +14,7 @@ primary_region = "sea"
   APP_NAME=Falkor
   CACHE_VIEWS=true
   SESSION_DRIVER=redis
-  REDIS_CONNECTION=redis
+  REDIS_CONNECTION=local
   REDIS_PORT=6379
 
 

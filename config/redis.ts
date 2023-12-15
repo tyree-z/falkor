@@ -35,7 +35,7 @@ export default redisConfig({
     | redis driver.
     |
     */
-    redis: {
+    local: {
       host: Env.get('REDIS_HOST'),
       port: Env.get('REDIS_PORT'),
       password: Env.get('REDIS_PASSWORD', ''),
