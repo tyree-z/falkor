@@ -15,7 +15,11 @@ env:
   CACHE_VIEWS: false
   SESSION_DRIVER: file
   APP_NAME: Falkor
+  SESSION_DRIVER: redis
   REDIS_CONNECTION: local
+  REDIS_HOST: ${{ secrets.REDIS_HOST }}
+  REDIS_PORT: ${{ secrets.REDIS_PORT }}
+  REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
 
 jobs:
   build:
