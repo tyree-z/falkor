@@ -3,26 +3,16 @@ on:
   push:
     branches:
       - main
-      - dev
 
 jobs:
   deploy:
-    name: Deploy app
+    name: Deploy API
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
 
-      # Conditional deployment for main branch
-      - name: Deploy to Main Instance
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy to Prod Insatnce
         run: flyctl deploy --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
-      # Conditional deployment for dev branch
-      - name: Deploy to Dev Instance
-        if: github.ref == 'refs/heads/dev'
-        run: flyctl deploy -a falkor-dev --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
