@@ -19,7 +19,10 @@
   "providers": [
     "./providers/AppProvider",
     "@adonisjs/core",
-    "adonis5-prometheus"
+    "adonis5-prometheus",
+    "@adonisjs/view",
+    "@adonisjs/session",
+    "@adonisjs/redis"
   ],
   "aceProviders": [
     "@adonisjs/repl"
@@ -37,5 +40,11 @@
   },
   "testProviders": [
     "@japa/preset-adonis/TestsProvider"
+  ],
+  "metaFiles": [
+    {
+      "pattern": "resources/views/**/*.edge",
+      "reloadServer": false
+    }
   ]
 }

@@ -29,7 +29,10 @@
       "@adonisjs/core",
       "@adonisjs/repl",
       "@japa/preset-adonis/build/adonis-typings",
-      "adonis5-prometheus"
+      "adonis5-prometheus",
+      "@adonisjs/view",
+      "@adonisjs/session",
+      "@adonisjs/redis"
     ]
   }
 }
