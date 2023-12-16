@@ -13,7 +13,7 @@ primary_region = "sea"
   DRIVE_DISK = "local"
   APP_NAME = "Falkor"
   CACHE_VIEWS = "true"
-  SESSION_DRIVER = "redis"
+  SESSION_DRIVER = "cookie"
   REDIS_CONNECTION = "local"
   REDIS_PORT = "6379"
 
