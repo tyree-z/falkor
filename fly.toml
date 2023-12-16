@@ -11,11 +11,11 @@ primary_region = "sea"
   HOST = "0.0.0.0"
   NODE_ENV = "production"
   DRIVE_DISK = "local"
-  APP_NAME=Falkor
-  CACHE_VIEWS=true
-  SESSION_DRIVER=redis
-  REDIS_CONNECTION=local
-  REDIS_PORT=6379
+  APP_NAME = "Falkor"
+  CACHE_VIEWS = "true"
+  SESSION_DRIVER = "redis"
+  REDIS_CONNECTION = "local"
+  REDIS_PORT = "6379"
 
 
 
