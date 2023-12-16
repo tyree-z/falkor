@@ -10,7 +10,6 @@ import Application from '@ioc:Adonis/Core/Application'
 import { sessionConfig } from '@adonisjs/session/build/config'
 
 export default sessionConfig({
-  
   /*
   |--------------------------------------------------------------------------
   | Enable/Disable sessions
@@ -113,5 +112,5 @@ export default sessionConfig({
   | must be defined inside `config/redis.ts` file as well.
   |
   */
-  redisConnection: 'redis',
+  redisConnection: 'local',
 })

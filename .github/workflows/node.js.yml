@@ -14,11 +14,7 @@ env:
   APP_KEY: 5qLsRbCBzpjpgyJ3xNfd649c77YERiaF # Not an important key ;)
   CACHE_VIEWS: false
   APP_NAME: Falkor
-  SESSION_DRIVER: redis
-  REDIS_CONNECTION: local
-  REDIS_HOST: ${{ secrets.REDIS_HOST }}
-  REDIS_PORT: ${{ secrets.REDIS_PORT }}
-  REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+  SESSION_DRIVER: cookie
 
 jobs:
   build:
