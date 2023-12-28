@@ -23,3 +23,11 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { test: true }
 })
+
+Route.group(() => {
+  Route.group(() => {
+    Route.post('/ingest', 'AnalyticsController.ingest')
+    // Analytics Grouping
+  }).prefix('/analytics')
+  // V1 Grouping
+}).prefix('/v1')
